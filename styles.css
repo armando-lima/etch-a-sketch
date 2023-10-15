@@ -1,12 +1,21 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
 .sliderContainer{
     display: flex;
     gap: 1em;
 }
 
 .sketchArea{
-    border: 1px solid black;
+    border: 0.1px solid black;
 }
 
 .sketchContainer{
     display: flex;
+    width: 30em;
+    height: 30em;
+    flex-wrap: wrap;
 }
