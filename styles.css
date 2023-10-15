@@ -1,4 +1,12 @@
-.slider{
+.sliderContainer{
     display: flex;
     gap: 1em;
+}
+
+.sketchArea{
+    border: 1px solid black;
+}
+
+.sketchContainer{
+    display: flex;
 }
