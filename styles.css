@@ -23,7 +23,7 @@
     margin: auto;
 }
 
-.headerContainer {
+.headerContainer, .footerContainer {
     text-align: center;
     background-color: #113946;
     color: white;
@@ -31,4 +31,10 @@
 
 main {
     background-color: #EAD7BB;
+}
+
+a, a:visited {
+    text-decoration: none;
+    outline: none;
+    color: inherit;
 }
