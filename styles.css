@@ -19,3 +19,9 @@
     height: 30em;
     flex-wrap: wrap;
 }
+
+.headerContainer {
+    text-align: center;
+    background-color: #113946;
+    color: white;
+}
