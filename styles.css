@@ -20,10 +20,15 @@
     width: 30em;
     height: 30em;
     flex-wrap: wrap;
+    margin: auto;
 }
 
 .headerContainer {
     text-align: center;
     background-color: #113946;
     color: white;
+}
+
+main {
+    background-color: #EAD7BB;
 }
