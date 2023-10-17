@@ -7,6 +7,8 @@
 .sliderContainer{
     display: flex;
     gap: 1em;
+    background-color: #BCA37F;
+    justify-content: center;
 }
 
 .sketchArea{
