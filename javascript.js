@@ -11,6 +11,10 @@ gridSizeSlider.addEventListener("mouseup", () => {
     drawGrid();
 });
 
+window.addEventListener("load", () => {
+    drawGrid();
+});
+
 function drawGrid() {
     let gridSizeValue = gridSizeSlider.value;
     let gridWidth = gridContainer.offsetWidth / gridSizeValue + "px";
