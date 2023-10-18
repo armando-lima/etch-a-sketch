@@ -9,10 +9,14 @@ gridSizeSlider.addEventListener("input", () => {
 
 gridSizeSlider.addEventListener("mouseup", () => {
     drawGrid();
+    let gridDraw = document.querySelectorAll(".sketchArea");
+    colorGrid(gridDraw);
 });
 
 window.addEventListener("load", () => {
     drawGrid();
+    let gridDraw = document.querySelectorAll(".sketchArea");
+    colorGrid(gridDraw);
 });
 
 function drawGrid() {
@@ -29,4 +33,12 @@ function drawGrid() {
         gridDraw.style.height = gridHeight;
         gridContainer.appendChild(gridDraw);
     }
+}
+
+function colorGrid(grid) {
+    grid.forEach(grid => {
+        grid.addEventListener("mouseover", () => {
+            grid.classList.add("hovered");
+        });
+    });
 }
