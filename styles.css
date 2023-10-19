@@ -20,7 +20,7 @@ main{
 }
 
 header, footer{
-    flex-basis: 10vh;
+    flex-basis: 8vh;
 }
 
 .sliderContainer{
@@ -48,7 +48,7 @@ header, footer{
     width: 30em;
     height: 30em;
     flex-wrap: wrap;
-    margin: auto;
+    margin: 2vh auto 2vh auto;
 }
 
 .headerContainer, .footerContainer {
