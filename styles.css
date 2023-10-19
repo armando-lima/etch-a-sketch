@@ -20,17 +20,25 @@ main{
 }
 
 header, footer{
-    flex-basis: 8vh;
+    flex-basis: 10vh;
 }
 
 .sliderContainer{
     display: flex;
     gap: 1em;
-    background-color: #bca37f91;
     justify-content: center;
     align-items: center;
-    margin-left: 3em;
     height: 10vh;
+    padding: 1em;
+    border-radius: 1em;
+}
+
+.optionsContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    background-color: #bca37f91;
+    margin-left: 3em;
     padding: 1em;
     border-radius: 1em;
 }
@@ -48,7 +56,6 @@ header, footer{
     width: 30em;
     height: 30em;
     flex-wrap: wrap;
-    margin: 2vh auto 2vh auto;
 }
 
 .headerContainer, .footerContainer {
