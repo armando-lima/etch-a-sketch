@@ -4,11 +4,35 @@
     box-sizing: border-box;
 }
 
+body{
+    display: flex;
+    flex-direction: column;
+}
+
+header, main, footer{
+    display: flex;
+}
+
+main{
+    flex-basis: 80vh;
+    background-color: #EAD7BB;
+    align-items: center;
+}
+
+header, footer{
+    flex-basis: 10vh;
+}
+
 .sliderContainer{
     display: flex;
     gap: 1em;
-    background-color: #BCA37F;
+    background-color: #bca37f91;
     justify-content: center;
+    align-items: center;
+    margin-left: 3em;
+    height: 10vh;
+    padding: 1em;
+    border-radius: 1em;
 }
 
 .sketchArea{
@@ -28,17 +52,17 @@
 }
 
 .headerContainer, .footerContainer {
-    text-align: center;
+    justify-content: center;
     background-color: #113946;
     color: white;
-}
-
-main {
-    background-color: #EAD7BB;
 }
 
 a, a:visited {
     text-decoration: none;
     outline: none;
     color: inherit;
+}
+
+.header, .footer{
+    align-self: center;
 }
