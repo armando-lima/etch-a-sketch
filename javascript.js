@@ -2,6 +2,7 @@ const gridSizeSlider = document.querySelector(".slider");
 let sliderLabel = document.querySelector(".sliderLabel");
 const gridContainer = document.querySelector(".sketchContainer");
 const resetButton = document.querySelector(".resetButton");
+const shadeButton = document.querySelector(".shadeButton");
 
 gridSizeSlider.addEventListener("input", () => {
     let gridSizeValue = gridSizeSlider.value;
@@ -23,6 +24,11 @@ window.addEventListener("load", () => {
 resetButton.addEventListener("click", () => {
     let gridDraw = document.querySelectorAll(".sketchArea");
     resetGrid(gridDraw);
+});
+
+shadeButton.addEventListener("click", () => {
+    let gridDraw = document.querySelectorAll(".sketchArea");
+    shadeGrid(gridDraw);
 });
 
 function drawGrid() {
@@ -53,4 +59,14 @@ function resetGrid(grids) {
     grids.forEach(grid => {
         grid.classList.remove("hovered");
     });
+}
+
+function shadeGrid(grids){
+    let i = 1;
+    grids.forEach(grid => {
+        grid.addEventListener("click", () => {
+            grid.style.backgroundColor = `rgba(0, 0, 0, ${0.1 * i})`;
+            i++;
+        });
+    });    
 }
