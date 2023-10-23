@@ -4,6 +4,7 @@ const gridContainer = document.querySelector(".sketchContainer");
 const resetButton = document.querySelector(".resetButton");
 const shadeButton = document.querySelector(".shadeButton");
 const blackButton = document.querySelector(".blackButton");
+const rainbowButton = document.querySelector(".rainbowButton");
 
 gridSizeSlider.addEventListener("input", () => {
     let gridSizeValue = gridSizeSlider.value;
@@ -35,6 +36,11 @@ shadeButton.addEventListener("click", () => {
 blackButton.addEventListener("click", () => {
     let gridDraw = document.querySelectorAll(".sketchArea");
     colorGrid(gridDraw);
+});
+
+rainbowButton.addEventListener("click", () => {
+    let gridDraw = document.querySelectorAll(".sketchArea");
+    rainbowGrid(gridDraw);
 });
 
 function drawGrid() {
@@ -112,6 +118,29 @@ function shadeGrid(grids) {
                 grid.setAttribute("data-opacity", opacity);
                 grid.style.backgroundColor = `rgba(0, 0, 0, ${opacity})`;
             }
+        });
+    });
+}
+
+function rainbowGrid(grids){
+    let isMouseDown = false;
+
+    gridContainer.addEventListener("mousedown", () => {
+        isMouseDown = true;
+    });
+
+    gridContainer.addEventListener("mouseup", () => {
+        isMouseDown = false;
+    });
+
+    grids.forEach(grid => {
+        grid.addEventListener("mouseover", () => {
+            if (isMouseDown) {
+                grid.style.backgroundColor = `rgba(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)})`;
+            }
+        });
+        grid.addEventListener("click", () => {
+            grid.style.backgroundColor = `rgba(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)})`;
         });
     });
 }
