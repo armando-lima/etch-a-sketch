@@ -48,9 +48,21 @@ function drawGrid() {
 }
 
 function colorGrid(grids) {
+    let isMouseDown = false;
+
+    gridContainer.addEventListener("mousedown", () => {
+        isMouseDown = true;
+    });
+
+    gridContainer.addEventListener("mouseup", () => {
+        isMouseDown = false;
+    });
+
     grids.forEach(grid => {
         grid.addEventListener("mouseover", () => {
-            grid.style.backgroundColor = `rgba(0, 0, 0, 1)`;
+            if (isMouseDown) {
+                grid.style.backgroundColor = `rgba(0, 0, 0, 1)`;
+            }   
         });
     });
 }
@@ -63,13 +75,25 @@ function resetGrid(grids) {
 }
 
 function shadeGrid(grids) {
+    let isMouseDown = false;
+
+    gridContainer.addEventListener("mousedown", () => {
+        isMouseDown = true;
+    });
+
+    gridContainer.addEventListener("mouseup", () => {
+        isMouseDown = false;
+    });
+
     grids.forEach(grid => {
-        grid.addEventListener("click", () => {
-            let opacity = parseFloat(grid.getAttribute("data-opacity")) || 0;
-            if (opacity < 1) {
-                opacity += 0.1;
-                grid.setAttribute("data-opacity", opacity);
-                grid.style.backgroundColor = `rgba(0, 0, 0, ${opacity})`;
+        grid.addEventListener("mouseover", () => {
+            if (isMouseDown) {
+                let opacity = parseFloat(grid.getAttribute("data-opacity")) || 0;
+                if (opacity < 1) {
+                    opacity += 0.1;
+                    grid.setAttribute("data-opacity", opacity);
+                    grid.style.backgroundColor = `rgba(0, 0, 0, ${opacity})`;
+                }
             }
         });
     });
