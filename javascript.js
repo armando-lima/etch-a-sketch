@@ -3,6 +3,7 @@ let sliderLabel = document.querySelector(".sliderLabel");
 const gridContainer = document.querySelector(".sketchContainer");
 const resetButton = document.querySelector(".resetButton");
 const shadeButton = document.querySelector(".shadeButton");
+const blackButton = document.querySelector(".blackButton");
 
 gridSizeSlider.addEventListener("input", () => {
     let gridSizeValue = gridSizeSlider.value;
@@ -29,6 +30,11 @@ resetButton.addEventListener("click", () => {
 shadeButton.addEventListener("click", () => {
     let gridDraw = document.querySelectorAll(".sketchArea");
     shadeGrid(gridDraw);
+});
+
+blackButton.addEventListener("click", () => {
+    let gridDraw = document.querySelectorAll(".sketchArea");
+    colorGrid(gridDraw);
 });
 
 function drawGrid() {
@@ -62,7 +68,10 @@ function colorGrid(grids) {
         grid.addEventListener("mouseover", () => {
             if (isMouseDown) {
                 grid.style.backgroundColor = `rgba(0, 0, 0, 1)`;
-            }   
+            }
+        });
+        grid.addEventListener("click", () => {
+            grid.style.backgroundColor = `rgba(0, 0, 0, 1)`;
         });
     });
 }
@@ -94,6 +103,14 @@ function shadeGrid(grids) {
                     grid.setAttribute("data-opacity", opacity);
                     grid.style.backgroundColor = `rgba(0, 0, 0, ${opacity})`;
                 }
+            }
+        });
+        grid.addEventListener("click", () => {
+            let opacity = parseFloat(grid.getAttribute("data-opacity")) || 0;
+            if (opacity < 1) {
+                opacity += 0.1;
+                grid.setAttribute("data-opacity", opacity);
+                grid.style.backgroundColor = `rgba(0, 0, 0, ${opacity})`;
             }
         });
     });
