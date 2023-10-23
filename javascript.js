@@ -12,7 +12,7 @@ gridSizeSlider.addEventListener("input", () => {
 gridSizeSlider.addEventListener("mouseup", () => {
     drawGrid();
     let gridDraw = document.querySelectorAll(".sketchArea");
-    //colorGrid(gridDraw);
+    colorGrid(gridDraw);
 });
 
 window.addEventListener("load", () => {
@@ -49,7 +49,7 @@ function drawGrid() {
 
 function colorGrid(grids) {
     grids.forEach(grid => {
-        grid.addEventListener("mouseover", () => {
+        grid.addEventListener("mouseover", () => { 
             grid.classList.add("hovered");
         });
     });
@@ -58,15 +58,18 @@ function colorGrid(grids) {
 function resetGrid(grids) {
     grids.forEach(grid => {
         grid.classList.remove("hovered");
+        grid.style.backgroundColor = `rgba(0, 0, 0, 0)`;
+        grid.removeAttribute("data-opacity");
     });
 }
 
 function shadeGrid(grids) {
     grids.forEach(grid => {
-        let opacity = 0;
         grid.addEventListener("click", () => {
+            let opacity = parseFloat(grid.getAttribute("data-opacity")) || 0;
             if (opacity < 1) {
                 opacity += 0.1;
+                grid.setAttribute("data-opacity", opacity);
                 grid.style.backgroundColor = `rgba(0, 0, 0, ${opacity})`;
             }
         });
