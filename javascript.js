@@ -61,12 +61,14 @@ function resetGrid(grids) {
     });
 }
 
-function shadeGrid(grids){
+function shadeGrid(grids) {
     grids.forEach(grid => {
-        let opacity = 1;
+        let opacity = 0;
         grid.addEventListener("click", () => {
-            grid.style.backgroundColor = `rgba(0, 0, 0, ${0.1 * opacity})`;
-            opacity++;
+            if (opacity < 1) {
+                opacity += 0.1;
+                grid.style.backgroundColor = `rgba(0, 0, 0, ${opacity})`;
+            }
         });
-    });    
+    });
 }
