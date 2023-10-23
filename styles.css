@@ -47,10 +47,6 @@ header, footer{
     border: 0.1px solid black;
 }
 
-.hovered{
-    background-color: black;
-}
-
 .sketchContainer{
     display: flex;
     width: 30em;

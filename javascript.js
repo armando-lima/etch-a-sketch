@@ -49,15 +49,14 @@ function drawGrid() {
 
 function colorGrid(grids) {
     grids.forEach(grid => {
-        grid.addEventListener("mouseover", () => { 
-            grid.classList.add("hovered");
+        grid.addEventListener("mouseover", () => {
+            grid.style.backgroundColor = `rgba(0, 0, 0, 1)`;
         });
     });
 }
 
 function resetGrid(grids) {
     grids.forEach(grid => {
-        grid.classList.remove("hovered");
         grid.style.backgroundColor = `rgba(0, 0, 0, 0)`;
         grid.removeAttribute("data-opacity");
     });
