@@ -104,20 +104,16 @@ function shadeGrid(grids) {
         grid.addEventListener("mouseover", () => {
             if (isMouseDown) {
                 let opacity = parseFloat(grid.getAttribute("data-opacity")) || 0;
-                if (opacity < 1) {
-                    opacity += 0.1;
-                    grid.setAttribute("data-opacity", opacity);
-                    grid.style.backgroundColor = `rgba(0, 0, 0, ${opacity})`;
-                }
-            }
-        });
-        grid.addEventListener("click", () => {
-            let opacity = parseFloat(grid.getAttribute("data-opacity")) || 0;
-            if (opacity < 1) {
                 opacity += 0.1;
                 grid.setAttribute("data-opacity", opacity);
                 grid.style.backgroundColor = `rgba(0, 0, 0, ${opacity})`;
             }
+        });
+        grid.addEventListener("click", () => {
+            let opacity = parseFloat(grid.getAttribute("data-opacity")) || 0;
+            opacity += 0.1;
+            grid.setAttribute("data-opacity", opacity);
+            grid.style.backgroundColor = `rgba(0, 0, 0, ${opacity})`;
         });
     });
 }
