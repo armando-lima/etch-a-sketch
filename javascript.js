@@ -5,10 +5,22 @@ const resetButton = document.querySelector(".resetButton");
 const shadeButton = document.querySelector(".shadeButton");
 const blackButton = document.querySelector(".blackButton");
 const rainbowButton = document.querySelector(".rainbowButton");
+const gridSizeButton = document.querySelector(".gridSizeButton");
 
 gridSizeSlider.addEventListener("input", () => {
     let gridSizeValue = gridSizeSlider.value;
     sliderLabel.innerText = gridSizeValue;
+});
+
+gridSizeButton.addEventListener("click", () => {
+    let gridSizeValue = prompt("Input the value between 1 and 100");
+    gridSizeSlider.value = gridSizeValue;
+    if (parseInt(gridSizeValue) && gridSizeValue >= 1 && gridSizeValue <= 100){
+        sliderLabel.innerText = gridSizeValue;
+        drawGrid();
+        let gridDraw = document.querySelectorAll(".sketchArea");
+        colorGrid(gridDraw);
+    }
 });
 
 gridSizeSlider.addEventListener("mouseup", () => {

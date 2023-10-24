@@ -17,8 +17,7 @@ main{
     flex-basis: 80vh;
     background-color: #EAD7BB;
     align-items: center;
-    justify-content: space-evenly;
-    padding: 0 24em 0 0;
+    justify-content: center;
     gap: 20px;
 }
 
@@ -31,7 +30,7 @@ header, footer{
     gap: 1em;
     justify-content: center;
     align-items: center;
-    height: 10vh;
+    height: 5vh;
     padding: 1em;
     border-radius: 1em;
 }
@@ -41,7 +40,6 @@ header, footer{
     flex-direction: column;
     gap: 1em;
     background-color: #bca37f91;
-    margin-left: 3em;
     padding: 1em;
     border-radius: 1em;
     flex-basis: 15em;
